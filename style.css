@@ -19,15 +19,19 @@ header {
 h1 {
   margin-top: 30px;
   font-size: 64px;
+  letter-spacing: .1em;
 }
 
 #userstory {
   background: #d0e4ea;
-  font-size: 14px;
+  color: #6a7484;
+  font-size: 13px;
   font-weight: 100;
+  letter-spacing: .1em;
+  line-height: 1.5em;
   text-transform: uppercase;
   margin: 5px 0;
-  padding: 15px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #000;
   border-top: 1px solid #000;
 }
