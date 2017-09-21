@@ -177,7 +177,7 @@ if (topThreeCountries.indexOf(answer7) >= 0) {
   console.log(userName + ' guessed ' + q7NumberOfGuesses + ' times and got the correct answer. ' + userName + ' guessed the following: ' + q7ArrayOfGuesses.join(', ') + '. Joy\'s top three countries to visit are: ' + topThreeCountries.join(', ') + '.');
 }
 else {
-  alert('You tried six times and still did not get the right number. Seriously, now!');
+  alert('You tried six times and still did not get the right answer. Seriously, now!');
   q7ArrayOfGuesses[q7NumberOfGuesses - 1] = answer7;
   console.log(userName + ' guessed six times and still did not guess one of Joy\'s favorite countries to visit. ' + userName + '\'s guesses were ' + q7ArrayOfGuesses.join(', ') + ', and the correct answers were: ' + topThreeCountries.join(', ') + '.');
 }
