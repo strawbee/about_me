@@ -1,6 +1,5 @@
 'use strict';
 
-var i;
 var pointsScored = 0;
 var arrayOfQuestions = [
   'Does Joy like pineapples on pizza?',
@@ -49,6 +48,7 @@ document.getElementById('username').innerHTML = userName;
 alert('Hello, ' + userName + '! Let\'s play a game to see how well you know Joy. Type \"yes\" or \"no\" to the following five questions.');
 
 function yesNoQuestions () {
+  var i;
   for (i = 0; i < 5; i++) {
     var answerNumber = prompt(arrayOfQuestions[i]).toUpperCase();
 
