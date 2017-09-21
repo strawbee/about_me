@@ -2,36 +2,73 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="description" content="A five question guessing game about Joy!" />
     <meta name="author" content="Joy Hou" />
-    <title>About Joy Question Game</title>
+    <title>About Joy</title>
     <link rel="stylesheet" type ="text/css" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
   </head>
   <body>
     <header>
-      <h1>About Joy</h1>
-      <p id="userstory">"As a developer, I want to be able to manifest my ideas to the browser, because I appreciate aesthetic value and possess ample creative energy."</p>
+      <h1>Joy Hou &nbsp;&nbsp;&nbsp;&nbsp;</h1>
     </header>
 
-    <div id="questions">
-      <h2>Five Question Guessing Game</h2>
-      <h3><span id="username"></span>, <span id="resultsmessage"></span>! You scored <span id="points"></span> points!</h3>
+    <p id="topquote">"As a developer, I want to be able to manifest my ideas to the browser, because I appreciate aesthetic value and possess ample creative energy."</p>
 
-      <h4>Question 1: Does Joy like pineapples on pizza?</h4>
-      <p class="answer">You answered: <span id="q1result"></span>.</p>
+    <div id="content">
 
-      <h4>Question 2: Does Joy have a dog?</h4>
-      <p class="answer">You answered: <span id="q2result"></span>.</p>
+      <div id="aboutme">
+        <h2>About Me</h2>
+        <p>
+          <img id="profileimage" src="profile.jpg" /> I am an adventurer, a dancer, a student, a teacher, and a lover of life. In my spare time, I salsa dance, hike, practice martial arts, run, play video games, read, write, create, and play. My favorite color is <span class="pink">pink</span>, my favorite liquor is tequila, and my favorite book is <span class="italic">"The Name of The Wind"</span> by Patrick Rothfuss. I love summer dresses, warm beaches, the touch of sunlight on my skin, fluffy animals, good reads, and pretty pictures. I have a sassy cat named Snowdrop, a rambunctuous dog named Toby, and a typically awesome but sometimes just tolerable husband named Adam.
+        </p>
+        <ul>Fun things that I've done:
+          <li>Bicycled from Champaign, IL to Canada by myself in four days (~400 miles).</li>
+          <li>Roller bladed from Champaign, IL to Chicago, IL with a friend in three days (~130 miles).</li>
+          <li>Skydiving!</li>
+          <li>White water rafting.</li>
+          <li>Scuba dived in the Blue Hole.</li>
+          <li>Snorkeled with sharks and sting rays, and swam with turtles.</li>
+        </ul>
 
-      <h4>Question 3: Does Joy have a cat?</h4>
-      <p class="answer">You answered: <span id="q3result"></span>.</p>
+        <ol>Fun things I plan to do, in order:
+          <li>Run a half marathon (November 26th, 2017)!</li>
+          <li>Create a layout that is posted to CSS Zen Garden.</li>
+          <li>Summit Mount Rainier.</li>
+          <li>Buy a vacation home in Belize.</li>
+          <li>Leash train a cat to go on hikes with me.</li>
+        </ol>
 
-      <h4>Question 4: Was Joy born in a barn?</h4>
-      <p class="answer">You answered: <span id="q4result"></span>.</p>
+      </div>
 
-      <h4>Question 5: Is Joy awesome?</h4>
-      <p class="answer">You answered: <span id="q5result"></span>.</p>
+      <div id="questions">
+        <h2>My Guessing Game</h2>
+        <h3><span id="username"></span>, <span id="resultsmessage"></span>! You scored <span id="points"></span> points!</h3>
+
+        <h4>Question 1: Does Joy like pineapples on pizza?</h4>
+        <p class="answer">You answered: <span id="q1result"></span>.</p>
+
+        <h4>Question 2: Does Joy have a dog?</h4>
+        <p class="answer">You answered: <span id="q2result"></span>.</p>
+
+        <h4>Question 3: Does Joy have a cat?</h4>
+        <p class="answer">You answered: <span id="q3result"></span>.</p>
+
+        <h4>Question 4: Was Joy born in a barn?</h4>
+        <p class="answer">You answered: <span id="q4result"></span>.</p>
+
+        <h4>Question 5: Is Joy awesome?</h4>
+        <p class="answer">You answered: <span id="q5result"></span>.</p>
+
+        <h4>Question 6: How lucky are you? Guess a number between 1 and 10!</h4>
+        <p class="answer">The random number was <span id="q6randomnumber"></span>. You guessed <span id="q6timesguessed"></span> times, and you answered: <span id="q6result"></span>.</p>
+
+        <h4>Question 7:</h4>
+        <p class="answer">The correct answers were <span id="q7favoritecountries"></span>. You guessed <span id="q7timesguessed"></span> times, and you answered: <span id="q7result"></span>.</p>
+      </div>
+
+
+
+
     </div>
 
     <script type="text/javascript" src="app.js"></script>
