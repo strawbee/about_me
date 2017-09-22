@@ -17,68 +17,81 @@ alert('Hello, ' + userName + '! Let\'s play a game to see how well you know Joy.
 // Questions 1 - 5
 function yesNoQuestions () {
   var i;
+  var userAnswer;
 
   var arrayOfQuestions = [
-    'Does Joy like pineapples on pizza?',
-    'Does Joy have a dog?',
-    'Does Joy have a cat?',
-    'Was Joy born in a barn?',
-    'Is Joy awesome?'];
-
-  var arrayOfCorrectAnswers = [
-    'N',
-    'Y',
-    'Y',
-    'N',
-    'Y'];
-
-  var arrayOfCorrectAnswers2 = [
-    'NO',
-    'YES',
-    'YES',
-    'NO',
-    'YES'];
-
-  var arrayOfPossibleResponses = [
-    'You are right!',
-    'You are wrong.'];
-
-  var arrayOfUserAnswers = [];
-
-  var arrayOfQuestionsInBrowser = [
-    'q1question',
-    'q2question',
-    'q3question',
-    'q4question',
-    'q5question'];
-
-  var arrayOfBrowserResults = [
-    'q1result',
-    'q2result',
-    'q3result',
-    'q4result',
-    'q5result'];
+    // Question 1
+    [ 'Does Joy like pineapples on pizza?',
+      'N',
+      'NO',
+      'You are right, because Joy is not a monster.',
+      'Gross, leave my web page.',
+      '',
+      'q1question',
+      'q1result'
+    ],
+    // Question 2
+    [ 'Does Joy have a dog?',
+      'Y',
+      'YES',
+      'She does! His name is Toby and he is a labradoodle.',
+      'You\'re wrong. She has an adorable doggo!',
+      '',
+      'q2question',
+      'q2result'
+    ],
+    // Question 3
+    [ 'Does Joy have a cat?',
+      'Y',
+      'YES',
+      'Yes, she has a floofy cat named Snowdrop~',
+      'Wrong! Joy loves her cat.',
+      '',
+      'q3question',
+      'q3result'
+    ],
+    // Question 4
+    [ 'Was Joy born in a barn?',
+      'N',
+      'NO',
+      'Correct, she was not born in a barn!',
+      'RUDE!',
+      '',
+      'q4question',
+      'q4result'
+    ],
+    // Question 5
+    [ 'Is Joy awesome?',
+      'Y',
+      'YES',
+      'Of course she is!',
+      'I hope you suffer a minor inconvenience.',
+      '',
+      'q5question',
+      'q5result'
+    ]
+  ];
 
   for (i = 0; i < arrayOfQuestions.length; i++) {
-    document.getElementById(arrayOfQuestionsInBrowser[i]).innerHTML = arrayOfQuestions[i];
-    var userAnswer = prompt(arrayOfQuestions[i]).toUpperCase();
+    document.getElementById(arrayOfQuestions[i][6]).innerHTML = arrayOfQuestions[i][0];
+    userAnswer = prompt(arrayOfQuestions[i][0]).toUpperCase();
 
     while (userAnswer !== 'Y' && userAnswer !== 'YES' && userAnswer !== 'N' && userAnswer !== 'NO') {
-      userAnswer = prompt('You did not answer in the correct format. ' + arrayOfQuestions[i]).toUpperCase();
+      userAnswer = prompt('You did not answer in the correct format. ' + arrayOfQuestions[i][0]).toUpperCase();
     }
 
-    arrayOfUserAnswers[i] = userAnswer;
+    arrayOfQuestions[i][5] = userAnswer;
 
-    if (userAnswer === arrayOfCorrectAnswers[i] || userAnswer === arrayOfCorrectAnswers2[i]) {
-      alert(arrayOfPossibleResponses[0]);
+    if (userAnswer === arrayOfQuestions[i][1] || userAnswer === arrayOfQuestions[i][2]) {
+      alert(arrayOfQuestions[i][3]);
       pointsScored++;
-      console.log(arrayOfQuestions[i] + ' ' + userName + ' answered ' + arrayOfUserAnswers[i] + '. The correct answer is ' + arrayOfCorrectAnswers2[i] + '. Congrats!');
+      console.log(arrayOfQuestions[i][0] + ' ' + userName + ' answered ' + arrayOfQuestions[i][5] + '. The correct answer is ' + arrayOfQuestions[i][2] + '. Congrats!');
     }
     else {
-      alert(arrayOfPossibleResponses[1]);
-      console.log(arrayOfQuestions[i] + ' ' + userName + ' answered ' + arrayOfUserAnswers[i] + '. The correct answer is ' + arrayOfCorrectAnswers2[i] + '.');
+      alert(arrayOfQuestions[i][4]);
+      console.log(arrayOfQuestions[i][0] + ' ' + userName + ' answered ' + arrayOfQuestions[i][5] + '. The correct answer is ' + arrayOfQuestions[i][2] + '.');
     }
-    document.getElementById(arrayOfBrowserResults[i]).innerHTML = 'You answered: ' + userAnswer + '.';
+    document.getElementById(arrayOfQuestions[i][7]).innerHTML = 'You answered: ' + userAnswer + '.';
   }
 }
 yesNoQuestions();
