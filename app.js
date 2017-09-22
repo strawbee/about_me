@@ -3,40 +3,6 @@
 var pointsScored = 0;
 var resultsMessage = document.getElementById('resultsmessage');
 
-var arrayOfQuestions = [
-  'Does Joy like pineapples on pizza?',
-  'Does Joy have a dog?',
-  'Does Joy have a cat?',
-  'Was Joy born in a barn?',
-  'Is Joy awesome?'];
-
-var arrayOfCorrectAnswers = [
-  'N',
-  'Y',
-  'Y',
-  'N',
-  'Y'];
-
-var arrayOfCorrectAnswers2 = [
-  'NO',
-  'YES',
-  'YES',
-  'NO',
-  'YES'];
-
-var arrayOfPossibleResponses = [
-  'You are right!',
-  'You are wrong.'];
-
-var arrayOfUserAnswers = [];
-
-var arrayOfBrowserResults = [
-  'q1result',
-  'q2result',
-  'q3result',
-  'q4result',
-  'q5result'];
-
 // Prompts user for their name. If the user does not enter a value, they will be prompted again.
 var userName = prompt('Hi there! What is your name?');
 while (userName.length === 0) {
@@ -51,7 +17,50 @@ alert('Hello, ' + userName + '! Let\'s play a game to see how well you know Joy.
 // Questions 1 - 5
 function yesNoQuestions () {
   var i;
+
+  var arrayOfQuestions = [
+    'Does Joy like pineapples on pizza?',
+    'Does Joy have a dog?',
+    'Does Joy have a cat?',
+    'Was Joy born in a barn?',
+    'Is Joy awesome?'];
+
+  var arrayOfCorrectAnswers = [
+    'N',
+    'Y',
+    'Y',
+    'N',
+    'Y'];
+
+  var arrayOfCorrectAnswers2 = [
+    'NO',
+    'YES',
+    'YES',
+    'NO',
+    'YES'];
+
+  var arrayOfPossibleResponses = [
+    'You are right!',
+    'You are wrong.'];
+
+  var arrayOfUserAnswers = [];
+
+  var arrayOfQuestionsInBrowser = [
+    'q1question',
+    'q2question',
+    'q3question',
+    'q4question',
+    'q5question'];
+
+  var arrayOfBrowserResults = [
+    'q1result',
+    'q2result',
+    'q3result',
+    'q4result',
+    'q5result'];
+
   for (i = 0; i < arrayOfQuestions.length; i++) {
+    document.getElementById(arrayOfQuestionsInBrowser[i]).innerHTML = arrayOfQuestions[i];
     var userAnswer = prompt(arrayOfQuestions[i]).toUpperCase();
 
     while (userAnswer !== 'Y' && userAnswer !== 'YES' && userAnswer !== 'N' && userAnswer !== 'NO') {
