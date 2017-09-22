@@ -1,6 +1,8 @@
 'use strict';
 
 var pointsScored = 0;
+var resultsMessage = document.getElementById('resultsmessage');
+
 var arrayOfQuestions = [
   'Does Joy like pineapples on pizza?',
   'Does Joy have a dog?',
@@ -20,8 +22,7 @@ var arrayOfCorrectAnswers2 = [
   'YES',
   'YES',
   'NO',
-  'YES'
-];
+  'YES'];
 
 var arrayOfPossibleResponses = [
   'You are right!',
@@ -47,18 +48,19 @@ document.getElementById('username').innerHTML = userName;
 // Tells user about the game
 alert('Hello, ' + userName + '! Let\'s play a game to see how well you know Joy. Type \"yes\" or \"no\" to the following five questions.');
 
+// Questions 1 - 5
 function yesNoQuestions () {
   var i;
   for (i = 0; i < 5; i++) {
-    var answerNumber = prompt(arrayOfQuestions[i]).toUpperCase();
+    var userAnswer = prompt(arrayOfQuestions[i]).toUpperCase();
 
-    while (answerNumber !== 'Y' && answerNumber !== 'YES' && answerNumber !== 'N' && answerNumber !== 'NO') {
-      answerNumber = prompt('You did not answer in the correct format. ' + arrayOfQuestions[i]).toUpperCase();
+    while (userAnswer !== 'Y' && userAnswer !== 'YES' && userAnswer !== 'N' && userAnswer !== 'NO') {
+      userAnswer = prompt('You did not answer in the correct format. ' + arrayOfQuestions[i]).toUpperCase();
     }
 
-    arrayOfUserAnswers[i] = answerNumber;
+    arrayOfUserAnswers[i] = userAnswer;
 
-    if (answerNumber === arrayOfCorrectAnswers[i] || answerNumber === arrayOfCorrectAnswers2[i]) {
+    if (userAnswer === arrayOfCorrectAnswers[i] || userAnswer === arrayOfCorrectAnswers2[i]) {
       alert(arrayOfPossibleResponses[0]);
       pointsScored++;
       console.log(arrayOfQuestions[i] + ' ' + userName + ' answered ' + arrayOfUserAnswers[i] + '. The correct answer is ' + arrayOfCorrectAnswers2[i] + '. Congrats!');
@@ -67,13 +69,13 @@ function yesNoQuestions () {
       alert(arrayOfPossibleResponses[1]);
       console.log(arrayOfQuestions[i] + ' ' + userName + ' answered ' + arrayOfUserAnswers[i] + '. The correct answer is ' + arrayOfCorrectAnswers2[i] + '.');
     }
-    document.getElementById(arrayOfBrowserResults[i]).innerHTML = answerNumber;
+    document.getElementById(arrayOfBrowserResults[i]).innerHTML = 'You answered: ' + userAnswer + '.';
   }
 }
 yesNoQuestions();
 
 // Question 6
-function function6() {
+function question6() {
   var answer6 = Math.round(prompt('How lucky are you? Guess a whole number between 1 and 10! You get four tries.'));
   var randomNumber = Math.floor(Math.random() * 10 + 1);
   var q6NumberOfGuesses = 1;
@@ -111,15 +113,13 @@ function function6() {
     console.log(userName + ' guessed four times and still did not get the right answer to the number guessing game. ' + userName + '\'s guesses were ' + q6ArrayOfGuesses.join(', ') + '.');
   }
 
-  document.getElementById('q6randomnumber').innerHTML = randomNumber;
-  document.getElementById('q6timesguessed').innerHTML = q6NumberOfGuesses;
-  document.getElementById('q6result').innerHTML = q6ArrayOfGuesses.join(', ');
+  document.getElementById('q6result').innerHTML = 'The random number was ' + randomNumber + '. You guessed ' + q6NumberOfGuesses + ' times, and you answered ' + q6ArrayOfGuesses.join(', ') + '.';
 }
 
-function6();
+question6();
 
 // Question 7
-function function7() {
+function question7() {
   var answer7 = prompt('Can you guess one of Joy\'s top three favorite countries to visit? You get six tries!').toUpperCase();
   var topThreeCountries = ['BELIZE', 'MEXICO', 'CHINA'];
   var q7NumberOfGuesses = 1;
@@ -151,21 +151,20 @@ function function7() {
     console.log(userName + ' guessed six times and still did not guess one of Joy\'s favorite countries to visit. ' + userName + '\'s guesses were ' + q7ArrayOfGuesses.join(', ') + ', and the correct answers were: ' + topThreeCountries.join(', ') + '.');
   }
 
-  document.getElementById('q7favoritecountries').innerHTML = topThreeCountries.join(', ');
-  document.getElementById('q7timesguessed').innerHTML = q7NumberOfGuesses;
-  document.getElementById('q7result').innerHTML = q7ArrayOfGuesses.join(', ');
+  document.getElementById('q7result').innerHTML = 'The correct answers were ' + topThreeCountries.join(', ') + '. You guessed ' + q7NumberOfGuesses + ' times, and you answered: ' + q7ArrayOfGuesses.join(', ') + '.';
 }
 
-function7();
+question7();
 
 // Displays points earned and a message accordingly
 document.getElementById('points').innerHTML = pointsScored;
-if (pointsScored >= 5) {
-  document.getElementById('resultsmessage').innerHTML = 'you are awesome';
+
+if (pointsScored >= 6) {
+  resultsMessage.innerHTML = 'you are awesome';
 }
-else if (pointsScored === 3 || pointsScored === 4) {
-  document.getElementById('resultsmessage').innerHTML = 'you did okay';
+else if (pointsScored === 4 || pointsScored === 5) {
+  resultsMessage.innerHTML = 'you did okay';
 }
 else {
-  document.getElementById('resultsmessage').innerHTML = 'you suck';
+  resultsMessage.innerHTML = 'you suck';
 }
