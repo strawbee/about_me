@@ -51,7 +51,7 @@ alert('Hello, ' + userName + '! Let\'s play a game to see how well you know Joy.
 // Questions 1 - 5
 function yesNoQuestions () {
   var i;
-  for (i = 0; i < 5; i++) {
+  for (i = 0; i < arrayOfQuestions.length; i++) {
     var userAnswer = prompt(arrayOfQuestions[i]).toUpperCase();
 
     while (userAnswer !== 'Y' && userAnswer !== 'YES' && userAnswer !== 'N' && userAnswer !== 'NO') {
